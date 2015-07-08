@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Meme Generator</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+
+	</head>
+	<body>
+  
+ 
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<p class="image-caption"> <canvas id="memecanvas"></canvas></p>
+			<img id="default-image" src='default.png' style='display:none'/>
+		</div>
+
+
+<div style="padding:40px;" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		
+		<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					 <br>Scale<br>
+    <input id="scale" type="range" min="0.05" max="4" value="1" step="0.01">
+				</div>
+
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<br>Rotate<br>
+    <input id="rotate" type="range" min="-180" max="180" value="0" step="1">
+
+				</div>
+
+			</div>	
+   
+
+ <div class="row">
+ 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+ 		  <br>Left - Right<br>
+       <input id="position" type="range" min="0" max="500" value="250" step="5">
+
+
+ 	</div>
+
+ 	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+ 		   <br>Your Background<br>	
+ 		  <input id="background-color" type="color" value="#333333" />
+ 	</div>
+ </div>
+
+  
+   
+    <br>Message<br>
+    <textarea id="custom-text" value="<your message>" onkeyup="doTransform()" oninput="doTransform" onpaste="doTransform"rows="4" cols="50"></textarea><br>
+
+  
+
+   
+    <input type="file" id="fileInput" name="imageLoader">
+
+    <br><br>
+    <a class="btn btn-primary btn-lg" href="" id="img-download" download="IJNET.jpg">Download image</a>  
+  
+		</div>
+	</div>
+</div>
+
+
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="main.js"></script>
+
+	<script type="text/javascript">
+	$('#memecanvas').css('background-color', 'rgba(158, 167, 184, 0.2)');
+
+
+$("#background-color").change(function(){
+  $("#memecanvas").css('background-color', $(this).val());
+});
+
+	</script>
+
+	</body>
+
+
+
+</html>
